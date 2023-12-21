@@ -43,6 +43,9 @@ public class Weapon : MonoBehaviour
             {
                 StartCoroutine(ShootBurst(Vector2.left));
             }
+
+
+
     }
     // Coroutine for shooting a burst of bullets
     IEnumerator ShootBurst(Vector2 direction)

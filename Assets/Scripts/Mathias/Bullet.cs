@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Enemy Hit");
             // Destroy the bullet when it collides with an enemy
             Destroy(gameObject);
         }
