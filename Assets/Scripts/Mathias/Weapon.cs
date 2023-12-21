@@ -104,6 +104,8 @@ public class Weapon : MonoBehaviour
         ApplyKnockback(shotDirection);
     }
 
+    // The ApplyKnockback method applies knockback force to the player in the opposite
+    // direction to the one they are shooting
     void ApplyKnockback(Vector2 knockbackDirection)
     {
         // Calculate the opposite direction for knockback
@@ -113,6 +115,7 @@ public class Weapon : MonoBehaviour
         Rigidbody2D playerRb = GetComponent<Rigidbody2D>();
         playerRb.AddForce(oppositeDirection * knockbackForce, ForceMode2D.Impulse);
     }
+
 }
 
 
