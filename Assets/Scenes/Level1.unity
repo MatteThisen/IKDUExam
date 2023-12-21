@@ -25861,11 +25861,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8677661146231388742, guid: ad20d49dc2f16a84089aa80696f28699, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8677661146231388742, guid: ad20d49dc2f16a84089aa80696f28699, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976951573147416583, guid: ad20d49dc2f16a84089aa80696f28699, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2516181232011855512, guid: ad20d49dc2f16a84089aa80696f28699, type: 3}
