@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 //This script has been developed with the help of ChatGPT
 
 public class Weapon : MonoBehaviour
 {
+    public Slider cooldownSlider;
+    public GameObject cooldownBar;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -60,8 +63,24 @@ public class Weapon : MonoBehaviour
                 yield return new WaitForSeconds(timeBetweenShots);
             }
 
-            // Pause the coroutine for a cooldown period after the burst
-            yield return new WaitForSeconds(burstCooldown);
+            // Cooldown phase
+            float cooldownTime = burstCooldown;
+            // The cooldown bar is made visible
+            cooldownBar.SetActive(true);
+
+            while (cooldownTime > 0f)
+            {
+                // Ensures the correct rotation for the cooldown bar
+                cooldownSlider.transform.rotation = Quaternion.identity;
+
+                // Update the slider value based on the remaining cooldown
+                cooldownSlider.value = 1f - (cooldownTime / burstCooldown);
+
+                yield return null; // Wait for the next frame
+                cooldownTime -= Time.deltaTime;
+            }
+            // 
+            cooldownBar.SetActive(false);
 
             // Set canShoot back to true, allowing the player to initiate another burst after the cooldown period
             canShoot = true;
