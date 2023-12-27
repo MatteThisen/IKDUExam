@@ -24,6 +24,9 @@ public class Weapon : MonoBehaviour
 
     public GameObject player;
 
+
+
+
     void Update()
     {
             // These if statements check which way the player wants to shoot and calls the ShootBurst method in the correct direction
@@ -43,8 +46,6 @@ public class Weapon : MonoBehaviour
             {
                 StartCoroutine(ShootBurst(Vector2.left));
             }
-
-
 
     }
     // Coroutine for shooting a burst of bullets
